@@ -1,0 +1,411 @@
+@font-face {
+    font-family: "Folks";
+    src: url(../font/folks.ttf);
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+}
+@font-face {
+    font-family: "Folks";
+    src: url(../font/folksb.ttf);
+    font-style: normal;
+    font-weight: bold;
+    font-display: auto;
+}
+@font-face {
+    font-family: "Misses";
+    src: url(../font/Misses.otf);
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+}
+
+:root {
+    --cor_principal: #5b014f;
+    --cor_secundaria: #ffb300;
+}
+
+::selection {
+    color: var(--cor_principal);
+    background-color: var(--cor_secundaria);
+}
+
+body,
+p {
+    font-size: 18px;
+    font-family: "Folks", sans-serif;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+a {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+section {
+    margin: 0;
+    padding: 90px 0;
+}
+
+.pctext {
+    color: var(--cor_principal);
+}
+
+.sctext {
+    color: var(--cor_secundaria);
+}
+
+.socialbar {
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.socialbar li {
+    margin-right: 12px;
+}
+
+.socialbar li:last-child {
+    margin-right: 0;
+}
+
+.socialbar li a {
+    display: block;
+    color: var(--cor_secundaria);
+}
+
+.socialbar li a:hover {
+    color: white;
+}
+
+.listcontactforms {
+    padding: 0;
+    list-style: none;
+}
+
+.listcontactforms li i {
+    margin-right: 8px;
+}
+
+/* Headers */
+
+h1,
+h2 {
+    font-family: "Misses", sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 42px;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3,
+h4 {
+    font-family: "Folks", sans-serif;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+h4 + h1 {
+    margin-top: -25px;
+}
+
+/* End headers */
+
+/* Navbar */
+#navbar {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90px;
+    left: 0px;
+    background-color: rgb(91, 1, 79);
+    font-size: 22px;
+    z-index: 999;
+}
+
+.navbarwrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.brand {
+    display: block;
+    margin-right: 30px;
+    height: 70px;
+    width: auto;
+}
+
+.navcontent {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#navbar .navcontent .socialbar {
+    margin: 0 0 0 45px;
+}
+
+.navlinks {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navlinks li {
+    position: relative;
+}
+
+.navlinks li a {
+    display: block;
+    padding: 0 15px;
+    height: 90px;
+    line-height: 90px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navlinks li a:hover {
+    color: var(--cor_principal);
+}
+
+.navlinks li a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: -1;
+    transition: width 0.35s;
+    transition-timing-function: cubic-bezier(0, 0.45, 0.65, 1);
+}
+
+.navlinks li a:hover::before {
+    width: 100%;
+}
+
+/* End navbar */
+
+/* Top banner */
+
+#topbanner {
+    position: relative;
+    padding-top: 180px;
+    display: block;
+    background-color: var(--cor_secundaria);
+    background-size: 100% 300%;
+    height: 720px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#topbanner .slider {
+    position: relative;
+    z-index: 99;
+}
+
+#topbanner .parallax {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+#topbanner .parallax img {
+    width: 100%;
+}
+
+#topbanner .wave {
+    position: absolute;
+    margin-left: -1980px;
+    left: 50%;
+    bottom: 0;
+    display: block;
+    height: 180px;
+    width: 3840px;
+    background-image: url(../img/mask_wave.svg);
+    z-index: 3;
+}
+
+/* End top banner */
+
+/* Footer */
+
+footer {
+    color: white;
+}
+
+#footer {
+    display: block;
+    padding: 90px 0;
+    background-color: #6b1a60;
+}
+
+#footer .listcontactforms li i {
+    color: var(--cor_secundaria);
+}
+
+#sitemap {
+    background-color: var(--cor_principal);
+}
+
+#sitemap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#sitemap ul li {
+    display: inline;
+}
+
+#sitemap ul li a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#sitemap ul li a:hover {
+    background-color: #6b1a60;
+    color: var(--cor_secundaria);
+}
+
+#copyright {
+    display: block;
+    padding: 6px 0;
+    background-color: black;
+    color: #495357;
+    font-size: 14px;
+    text-align: center;
+}
+
+#copyright a {
+    color: white;
+}
+
+#copyright a:hover {
+    color: var(--cor_secundaria);
+}
+
+/* End footer */
+
+.roundcardinfo {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border: 3px white solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.roundcardinfo.animated {
+    opacity: 1;
+}
+
+.roundcardinfo a {
+    display: block;
+}
+
+.roundcardinfo img {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.roundcardinfo .info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.35s ease-in;
+}
+
+.roundcardinfo.yellow .info {
+    background-color: rgba(250, 255, 0, 0.5);
+}
+
+.roundcardinfo.pink .info {
+    background-color: rgba(255, 0, 150, 0.5);
+}
+
+.roundcardinfo.green .info {
+    background-color: rgba(0, 255, 130, 0.5);
+}
+
+.roundcardinfo .info h2 {
+    color: var(--cor_principal);
+}
+
+.roundcardinfo a:hover + .info {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cardproduct {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #deccdb;
+    text-align: center;
+    border-radius: 6px;
+    opacity: 0;
+}
+
+.cardproduct.animated {
+    opacity: 1;
+}
+
+.cardproduct figure {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.cardproduct figure img {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

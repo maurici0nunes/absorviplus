@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/cerulean/bootstrap.min.css"
+        />
+    </head>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        .nav-icon {
+            margin: 1em;
+            width: 40px;
+        }
+
+        .nav-icon:after,
+        .nav-icon:before,
+        .nav-icon div {
+            background-color: #fff;
+            border-radius: 3px;
+            content: "";
+            display: block;
+            height: 5px;
+            margin: 7px 0;
+            transition: all 2s linear;
+        }
+
+        .nav-icon:hover:before {
+            transform: translateY(12px) rotate(135deg);
+        }
+
+        .nav-icon:hover:after {
+            transform: translateY(-12px) rotate(-135deg);
+        }
+
+        .nav-icon:hover div {
+            opacity: 0;
+        }
+    </style>
+
+    <body>
+        <div class="nav-icon">
+            <div></div>
+        </div>
+    </body>
+</html>
