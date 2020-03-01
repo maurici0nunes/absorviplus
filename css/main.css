@@ -126,20 +126,26 @@ h4 + h1 {
 /* End headers */
 
 /* Navbar */
+
+header{
+    width: 100%;
+    height: 100%;
+}
+
 #navbar {
     position: absolute;
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 90px;
-    left: 0px;
-    background-color: rgb(91, 1, 79);
+    top: 0;
+    left: 0;
+    background-color: var(--cor_principal);
     font-size: 22px;
     z-index: 999;
 }
-
 .navbarwrapp {
     display: flex;
+    height: 90px;
     align-items: center;
     justify-content: space-between;
 }
@@ -147,17 +153,18 @@ h4 + h1 {
 a.brand {
     display: block;
     margin-right: 30px;
-    height: 70px;
     width: auto;
 }
 
-.navcontent {
+#navcontent {
     display: flex;
+    flex-direction: row;
+    height: 100%;
     align-items: center;
     font-weight: bold;
 }
 
-#navbar .navcontent .socialbar {
+#navbar #navcontent .socialbar {
     margin: 0 0 0 45px;
 }
 
@@ -181,11 +188,11 @@ a.brand {
     text-transform: uppercase;
 }
 
-.navlinks li a:hover {
+#navcontent .navlinks li a:hover {
     color: var(--cor_principal);
 }
 
-.navlinks li a::before {
+#navcontent .navlinks li a::before {
     content: "";
     display: block;
     position: absolute;
@@ -200,11 +207,111 @@ a.brand {
     transition-timing-function: cubic-bezier(0, 0.45, 0.65, 1);
 }
 
-.navlinks li a:hover::before {
+#navcontent .navlinks li a:hover::before {
     width: 100%;
 }
 
 /* End navbar */
+
+/* mobile Navbar */
+
+#mobileNavContent {
+    display: none;
+}
+
+#mobileNavContent .navlinks {
+    display: block;
+    text-align: center;
+}
+
+#mobileNavContent .socialbar {
+    justify-content: center;
+}
+
+#nav-icon {
+    display: none;
+    width: 60px;
+    height: 45px;
+    position: relative;
+    margin-left: auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(2) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon span:nth-child(3) {
+    top: 36px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+}
+
+#nav-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+}
+
+/* End mobile Navbar */
 
 /* Top banner */
 
@@ -358,15 +465,15 @@ footer {
 }
 
 .roundcardinfo.yellow .info {
-    background-color: rgba(250, 255, 0, 0.5);
+    background-color: rgba(255, 179, 0, 0.5);
 }
 
 .roundcardinfo.pink .info {
-    background-color: rgba(255, 0, 150, 0.5);
+    background-color: rgba(204, 0, 118, 0.5);
 }
 
 .roundcardinfo.green .info {
-    background-color: rgba(0, 255, 130, 0.5);
+    background-color: rgba(118, 204, 0, 0.5);
 }
 
 .roundcardinfo .info h2 {
@@ -408,4 +515,38 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Media queries */
+
+/* Medium devices (tablets, 1023px and down) */
+@media (max-width: 1023px) {
+    #nav-icon {
+        display: block;
+    }
+
+    #navcontent {
+        display: none;
+    }
+
+    #mobileNavContent {
+        position: absolute;
+        display: block;
+        padding: 30px 0;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        background-color: var(--cor_principal);
+        font-weight: bold;
+        opacity: 0;
+        z-index: -1;
+        transform: translateY(-100%);
+        transition: all 0.5s linear;
+    }
+
+    #mobileNavContent.show {
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 990;
+    }
 }
