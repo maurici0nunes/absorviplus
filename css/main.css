@@ -321,8 +321,8 @@ a.brand {
     display: block;
     background-color: var(--cor_secundaria);
     background-size: 100% 300%;
-    height: 720px;
     width: 100%;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -331,17 +331,34 @@ a.brand {
     z-index: 99;
 }
 
+#topbanner .slider .content{
+    text-align: left;
+}
+
+#topbanner .slider .content h1{
+    color: var(--cor_secundaria);
+    text-shadow: 2px 2px var(--cor_principal);
+}
+
+#topbanner .slider .content p{
+    color: white;
+    font-size: 22px;
+}
+
 #topbanner .parallax {
     position: absolute;
     top: 0;
     display: block;
     width: 100%;
-    height: auto;
+    height: 1050px;
     z-index: 1;
 }
 
 #topbanner .parallax img {
-    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    object-position: 50% 50%;
+    object-fit: cover;
 }
 
 #topbanner .wave {
@@ -520,8 +537,14 @@ footer {
 
 /* Media queries */
 
-/* Medium devices (tablets, 1023px and down) */
-@media (max-width: 1023px) {
+/* Medium devices (tablets, 991px and down) */
+@media (max-width: 576px) {
+    #topbanner .wave{
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
     #nav-icon {
         display: block;
     }
@@ -549,5 +572,13 @@ footer {
         transform: translateY(0);
         opacity: 1;
         z-index: 990;
+    }
+
+    #topbanner .slider .content{
+        text-align: center;
+    }
+
+    #topbanner .slider .img{
+        display: none;
     }
 }
