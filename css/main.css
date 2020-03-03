@@ -37,7 +37,7 @@ p {
 }
 
 p {
-    margin-bottom: 18px;
+    margin-bottom: 30px;
 }
 
 a {
@@ -425,6 +425,7 @@ footer {
     position: relative;
     background-color: white;
     width: 100%;
+    margin-bottom: 30px;
     padding-bottom: 100%;
     overflow: hidden;
     border: 3px white solid;
