@@ -58,6 +58,60 @@ section {
     color: var(--cor_secundaria);
 }
 
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px 6px 12px;
+    background: var(--cor_principal);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 8px 0;
+    overflow: hidden;
+    transition: color 0.25s linear;
+}
+
+.button:hover {
+    color: var(--cor_secundaria);
+}
+
+.button.big {
+    padding: 8px 16px 8px;
+    border-radius: 10px 0;
+    font-size: 22px;
+}
+
+.button.icon {
+    padding: 6px 48px 6px 12px;
+}
+
+.button.big.icon {
+    padding: 8px 58px 8px 16px;
+}
+
+.button.icon i {
+    position: absolute;
+    width: 36px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    top: 0;
+    left: auto;
+    right: 0;
+}
+
+.button.big.icon i {
+    width: 42px;
+}
+
+.button.icon i::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
 .socialbar {
     display: flex;
     justify-content: left;
@@ -128,7 +182,7 @@ h4 + h1 {
 
 /* Navbar */
 
-header{
+header {
     width: 100%;
     height: 100%;
 }
@@ -332,16 +386,16 @@ a.brand {
     z-index: 99;
 }
 
-#topbanner .slider .content{
+#topbanner .slider .content {
     text-align: left;
 }
 
-#topbanner .slider .content h1{
+#topbanner .slider .content h1 {
     color: var(--cor_secundaria);
     text-shadow: 2px 2px var(--cor_principal);
 }
 
-#topbanner .slider .content p{
+#topbanner .slider .content p {
     color: white;
     font-size: 22px;
 }
@@ -540,7 +594,7 @@ footer {
 
 /* Medium devices (tablets, 991px and down) */
 @media (max-width: 576px) {
-    #topbanner .wave{
+    #topbanner .wave {
         display: none;
     }
 }
@@ -561,7 +615,7 @@ footer {
         width: 100%;
         top: 90px;
         left: 0;
-        background-color: var(--cor_principal);
+        background-color: rgba(91, 1, 79, 0.85);
         font-weight: bold;
         opacity: 0;
         z-index: -1;
@@ -575,32 +629,32 @@ footer {
         z-index: 990;
     }
 
-    #topbanner .slider .content{
+    #topbanner .slider .content {
         text-align: center;
     }
 
-    #topbanner .slider .img{
+    #topbanner .slider .img {
         display: none;
     }
 
-    #footer{
+    #footer {
         text-align: center;
     }
 
-    #footer .socialbar{
+    #footer .socialbar {
         justify-content: center;
     }
 
-    #sitemap ul{
+    #sitemap ul {
         width: 100%;
         text-align: center;
     }
 
-    #sitemap ul li{
+    #sitemap ul li {
         display: block;
     }
 
-    #sitemap ul li a{
+    #sitemap ul li a {
         display: block;
     }
 }
