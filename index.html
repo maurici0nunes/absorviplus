@@ -6,6 +6,7 @@
         <title>Absorviplus - Refil para fraldas</title>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+        <script src="js/swiper.min.js"></script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
@@ -14,6 +15,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.4.1/cerulean/bootstrap.min.css"
         />
+        <link rel="stylesheet" href="css/swiper.css" />
         <link rel="stylesheet" href="css/animate.css" />
         <link rel="stylesheet" href="css/main.css" />
     </head>
@@ -86,43 +88,85 @@
             </div>
         </header>
         <section id="topbanner">
-            <div class="slider">
-                <div class="container-md">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6 col-xl-4">
-                            <div class="content">
-                                <h1>
-                                    Refil para fraldas
-                                </h1>
-                                <p>
-                                    Economize mais as fraldas usando Absorvente
-                                    Geriátrico, produto utilizado para
-                                    acompanhar a fralda ou sozinho, pois em
-                                    muitos casos substitui a fralda,
-                                    principalmente no verão.
-                                </p>
-                                <button class="button big icon">
-                                    <i class="fas fa-angle-right"></i>
-                                    Mais detalhes
-                                </button>
+            <div class="swiper-container">
+                <div
+                    class="parallax-bg"
+                    style="background-image:url(img/seniors_bg_hero.jpg)"
+                    data-swiper-parallax="-20%"
+                ></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="container-md">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="content">
+                                        <h1>
+                                            Refil para fraldas
+                                        </h1>
+                                        <p>
+                                            Economize mais as fraldas usando
+                                            Absorvente Geriátrico, produto
+                                            utilizado para acompanhar a fralda
+                                            ou sozinho, pois em muitos casos
+                                            substitui a fralda, principalmente
+                                            no verão.
+                                        </p>
+                                        <button class="button big icon">
+                                            <i class="fas fa-angle-right"></i>
+                                            Mais detalhes
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="img">
+                                        <img
+                                            class="img-fluid"
+                                            src="img/refil.png"
+                                            alt="refil"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-lg-6 col-xl-8">
-                            <div class="img">
-                                <img
-                                    class="img-fluid mb-2"
-                                    src="img/refil.png"
-                                    alt="fralda"
-                                />
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="container-md">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="content">
+                                        <h1>
+                                            Fralda geriátrica
+                                        </h1>
+                                        <p>
+                                            Economize mais as fraldas usando
+                                            Absorvente Geriátrico, produto
+                                            utilizado para acompanhar a fralda
+                                            ou sozinho, pois em muitos casos
+                                            substitui a fralda, principalmente
+                                            no verão.
+                                        </p>
+                                        <button class="button big icon">
+                                            <i class="fas fa-angle-right"></i>
+                                            Mais detalhes
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="img">
+                                        <img
+                                            class="img-fluid"
+                                            src="img/fralda.png"
+                                            alt="fralda"
+                                        />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination swiper-pagination-white"></div>
+                <div class="wave"></div>
             </div>
-            <div class="parallax">
-                <img src="./img/seniors_bg_hero.jpg" alt="" />
-            </div>
-            <div class="wave"></div>
         </section>
         <section>
             <div class="container-md">
@@ -400,6 +444,19 @@
         crossorigin="anonymous"
         src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"
     ></script>
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            parallax: true,
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
+        });
+    </script>
     <script>
         var ctr = new ScrollMagic.Controller({ container: "#wrapper" });
 
