@@ -58,6 +58,12 @@ section {
     color: var(--cor_secundaria);
 }
 
+.image{
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
 .button {
     position: relative;
     display: inline-block;
@@ -379,6 +385,16 @@ a.brand {
     height: 700px;
 }
 
+#topbanner h1 {
+    color: var(--cor_secundaria);
+    text-shadow: 2px 2px var(--cor_principal);
+}
+
+#topbanner p {
+    color: white;
+    font-size: 22px;
+}
+
 #topbanner .parallax-bg {
     position: absolute;
     left: 0;
@@ -401,14 +417,29 @@ a.brand {
     z-index: 3;
 }
 
-#topbanner h1 {
-    color: var(--cor_secundaria);
-    text-shadow: 2px 2px var(--cor_principal);
+#topbanner .img,
+#topbanner .content{
+    opacity: 0;
 }
 
-#topbanner p {
-    color: white;
-    font-size: 22px;
+#topbanner .swiper-slide-active .content {
+    animation: fadeInLeft 1s;
+    opacity: 1;
+}
+
+#topbanner .swiper-slide-prev .content,
+#topbanner .swiper-slide-next .content {
+    animation: fadeOutLeft 1s;
+}
+
+#topbanner .swiper-slide-active .img {
+    animation: fadeInRight 1s;
+    opacity: 1;
+}
+
+#topbanner .swiper-slide-prev .img,
+#topbanner .swiper-slide-next .img {
+    animation: fadeOutRight 1s;
 }
 
 #topbanner .wave {
@@ -594,6 +625,16 @@ footer {
     }
 }
 
+@media (max-width: 767px) {
+    #topbanner .content {
+        text-align: center;
+    }
+    
+    #topbanner .img {
+        display: none;
+    }
+}
+
 @media (max-width: 991px) {
     #nav-icon {
         display: block;
@@ -622,14 +663,6 @@ footer {
         transform: translateY(0);
         opacity: 1;
         z-index: 990;
-    }
-
-    #topbanner .slider .content {
-        text-align: center;
-    }
-
-    #topbanner .slider .img {
-        display: none;
     }
 
     #footer {
