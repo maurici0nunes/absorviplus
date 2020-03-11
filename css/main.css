@@ -392,6 +392,7 @@ a.brand {
 
 #topbanner p {
     color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
     font-size: 22px;
 }
 
@@ -401,18 +402,17 @@ a.brand {
     top: 0;
     width: 130%;
     height: 100%;
+    background-position: center bottom;
     background-repeat: no-repeat;
 }
 
 #topbanner .parallax-bg1{
     background-size: cover;
-    background-position: center top;
     z-index: 1;
 }
 
 #topbanner .parallax-bg2{
     background-size: 605px 700px;
-    background-position: center bottom;
     z-index: 2;
 }
 
