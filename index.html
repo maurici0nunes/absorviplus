@@ -90,9 +90,14 @@
         <section id="topbanner">
             <div class="swiper-container">
                 <div
-                    class="parallax-bg"
-                    style="background-image:url(img/seniors_bg_hero.jpg)"
-                    data-swiper-parallax="-20%"
+                    class="parallax-bg1"
+                    style="background-image:url(img/bg_forest.jpg)"
+                    data-swiper-parallax="-5%"
+                ></div>
+                <div
+                    class="parallax-bg2"
+                    style="background-image:url(img/seniors_person2.png)"
+                    data-swiper-parallax="-11%"
                 ></div>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -164,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination swiper-pagination-white"></div>
+                <div class="swiper-pagination swiper-pagination-theme"></div>
                 <div class="wave"></div>
             </div>
         </section>
@@ -452,8 +457,9 @@
                 crossFade: true
             },
             autoplay: {
-                delay: 6000
+                delay: 8000
             },
+            disableOnInteraction: false,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true

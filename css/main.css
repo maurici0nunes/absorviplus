@@ -395,16 +395,25 @@ a.brand {
     font-size: 22px;
 }
 
-#topbanner .parallax-bg {
+#topbanner .parallax-bg1, #topbanner .parallax-bg2 {
     position: absolute;
-    left: 0;
+    left: -10%;
     top: 0;
     width: 130%;
     height: 100%;
-    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#topbanner .parallax-bg1{
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     z-index: 1;
+}
+
+#topbanner .parallax-bg2{
+    background-size: 605px 700px;
+    background-position: center bottom;
+    z-index: 2;
 }
 
 #topbanner .swiper-container{
@@ -414,7 +423,7 @@ a.brand {
 }
 
 #topbanner .swiper-container .swiper-wrapper {
-    z-index: 3;
+    z-index: 4;
 }
 
 #topbanner .img,
@@ -451,7 +460,7 @@ a.brand {
     height: 180px;
     width: 3840px;
     background-image: url(../img/mask_wave.svg);
-    z-index: 2;
+    z-index: 3;
 }
 
 /* End top banner */
