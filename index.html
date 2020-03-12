@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Absorviplus - Refil para fraldas</title>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
         <script src="js/swiper.min.js"></script>
         <link
             rel="stylesheet"
@@ -294,12 +293,12 @@
                 <h1 class="pctext text-center">
                     Conheça nossos produtos
                 </h1>
-                <div class="row">
-                    <div class="col-sm-4">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-6 col-md-4">
                         <div class="invisible" data-animation="flipInY"></div>
                         <div class="cardproduct">
                             <figure>
-                                <img src="img/img_bexiga.jpg" alt="" />
+                                <img src="img/refil.png" alt="" />
                             </figure>
                             <h4 class="pctext">Absorvente geriátrico</h4>
                             <p>
@@ -309,25 +308,11 @@
                             <a href="#">Visualizar</a>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6 col-md-4">
                         <div class="invisible" data-animation="flipInY"></div>
                         <div class="cardproduct">
                             <figure>
-                                <img src="img/img_bexiga.jpg" alt="" />
-                            </figure>
-                            <h4 class="pctext">Refil para fralda</h4>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit.
-                            </p>
-                            <a href="#">Visualizar</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="invisible" data-animation="flipInY"></div>
-                        <div class="cardproduct">
-                            <figure>
-                                <img src="img/img_bexiga.jpg" alt="" />
+                                <img src="img/fralda.png" alt="" />
                             </figure>
                             <h4 class="pctext">Fralda geriátrica</h4>
                             <p>
@@ -510,7 +495,6 @@
                                 elSibling.classList.add(animationIn);
                             }
                         })
-                        .addIndicators({ name: " - begin " })
                         .addTo(ctr);
                 } else {
                     elSibling.classList.add("animated");
@@ -524,7 +508,6 @@
                             elSibling,
                             el.getAttribute("data-animation")
                         )
-                        .addIndicators({ name: " - begin " })
                         .addTo(ctr);
                 }
             });

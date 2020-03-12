@@ -127,6 +127,10 @@ section {
     font-size: 1.5rem;
 }
 
+p + .socialbar {
+    margin-top: -15px;
+}
+
 .socialbar li {
     margin-right: 12px;
 }
@@ -392,7 +396,7 @@ a.brand {
 
 #topbanner p {
     color: white;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
     font-size: 22px;
 }
 
