@@ -215,9 +215,13 @@ header {
     justify-content: space-between;
 }
 
-a.brand {
+.brand{
     display: block;
     margin-right: 30px;
+}
+
+.brand img{
+    height: 72px;
     width: auto;
 }
 
