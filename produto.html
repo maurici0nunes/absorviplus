@@ -24,7 +24,7 @@
             <div id="navbar" class="shadow">
                 <div class="container-lg">
                     <div class="navbarwrapp">
-                        <a href="#" class="brand">
+                        <a href="/" class="brand">
                             <img src="img/logo3.svg" alt="" />
                         </a>
                         <div id="nav-icon" data-target="mobileNavContent">
@@ -35,7 +35,7 @@
                         <div id="navcontent">
                             <ul class="navlinks">
                                 <li>
-                                    <a href="#">home</a>
+                                    <a href="/">home</a>
                                 </li>
                                 <li><a href="#">empresa</a></li>
                                 <li><a href="#">produtos</a></li>
@@ -99,32 +99,25 @@
                                 <div class="swiper-wrapper">
                                     <div
                                         class="swiper-slide"
-                                        style="background-image: url(https://via.placeholder.com/500x360/fcf?text=Produto+1)"
+                                        style="background-image: url(https://via.placeholder.com/500x360/fcf?text=Foto+1)"
                                     ></div>
                                     <div
                                         class="swiper-slide"
-                                        style="background-image: url(https://via.placeholder.com/500x360/cff?text=Produto+2)"
+                                        style="background-image: url(https://via.placeholder.com/500x360/cff?text=Foto+2)"
                                     ></div>
                                     <div
                                         class="swiper-slide"
-                                        style="background-image: url(https://via.placeholder.com/500x360/ffc?text=Produto+3)"
+                                        style="background-image: url(https://via.placeholder.com/500x360/ffc?text=Foto+3)"
                                     ></div>
                                     <div
                                         class="swiper-slide"
-                                        style="background-image: url(https://via.placeholder.com/500x360/fdf?text=Produto+4)"
+                                        style="background-image: url(https://via.placeholder.com/500x360/fdf?text=Foto+4)"
                                     ></div>
                                     <div
                                         class="swiper-slide"
-                                        style="background-image: url(https://via.placeholder.com/500x360/dff?text=Produto+5)"
+                                        style="background-image: url(https://via.placeholder.com/500x360/dff?text=Foto+5)"
                                     ></div>
                                 </div>
-                                <!-- Add Arrows -->
-                                <div
-                                    class="swiper-button-next swiper-button-white"
-                                ></div>
-                                <div
-                                    class="swiper-button-prev swiper-button-white"
-                                ></div>
                             </div>
                         </div>
                     </div>
@@ -132,20 +125,31 @@
                         <div class="productdescription">
                             <h2>Refil para fraldas</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Enim dolorem, sapiente magnam
-                                aliquam expedita eligendi quam deserunt
-                                asperiores possimus earum atque laborum
-                                reprehenderit! Dolore delectus ratione quod
-                                facere asperiores blanditiis.
+                                Economize mais as fraldas usando Absorvente
+                                Geriátrico, produto utilizado para acompanhar a
+                                fralda ou sozinho, pois em muitos casos
+                                substitui a fralda, principalmente no verão,
+                                dando um conforto maior ao paciente, seu tamanho
+                                é de: 60 cm x 16 cm G ou 50 cm x 16 cm , absorve
+                                em torno de 500 ml e até 1 litro de liquido.
+                                Também utilizado dentro de fraldas garantindo
+                                mais de 2 litros de absorção.
                             </p>
-                            <p><strong>Tamanhos:</strong></p>
-                            <ul class="productsizes">
-                                <li><a href="">P</a></li>
-                                <li><a href="">M</a></li>
-                                <li><a href="">G</a></li>
-                                <li><a href="">GG</a></li>
-                            </ul>
+                            <p>
+                                <strong>Composição do produto:</strong>
+                                Fibras de celulose, papel absorvente, fibras de
+                                polipropileno, polímero termoplástico, polímero
+                                superabsorvente, filme de polietileno.
+                            </p>
+                            <div class="info">
+                                <p><strong>Tamanhos:</strong></p>
+                                <ul class="productsizes">
+                                    <li><a href="">P</a></li>
+                                    <li><a href="">M</a></li>
+                                    <li><a href="">G</a></li>
+                                    <li><a href="">GG</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,9 +161,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="characteristics">
-                            <li><span>1</span>Característica 1</li>
-                            <li><span>2</span>Característica 2</li>
-                            <li><span>3</span>Característica 3</li>
+                            <li><span>1</span>Unisex</li>
+                            <li><span>2</span>Absorvição de 500ml até 1 litro</li>
+                            <li><span>3</span>Pode acompanhar fraldas</li>
                             <li><span>4</span>Característica 4</li>
                             <li><span>5</span>Característica 5</li>
                         </ul>
@@ -283,22 +287,25 @@
         src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"
     ></script>
     <script>
-
         var productPreview = document.querySelector(".productpreview");
+        var thumbsImg = document.querySelector(
+            ".gallerythumbs .swiper-wrapper"
+        );
+
+        productPreview.style.backgroundImage =
+            thumbsImg.firstElementChild.style.backgroundImage;
 
         var galleryThumbs = new Swiper(".gallerythumbs", {
             spaceBetween: 10,
             slidesPerView: 3,
-            loop: true,
             slideToClickedSlide: true,
+            loop: true,
             centeredSlides: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
             on: {
-                slideChange: function () {
-                    var currentBackground = galleryThumbs.slides[galleryThumbs.activeIndex].style.backgroundImage;
+                slideChange: function() {
+                    var currentBackground =
+                        galleryThumbs.slides[galleryThumbs.activeIndex].style
+                            .backgroundImage;
                     productPreview.style.backgroundImage = currentBackground;
                 }
             }
