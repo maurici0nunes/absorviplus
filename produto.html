@@ -137,18 +137,23 @@
                             </p>
                             <p>
                                 <strong>Composição do produto:</strong>
-                                Fibras de celulose, papel absorvente, fibras de
-                                polipropileno, polímero termoplástico, polímero
-                                superabsorvente, filme de polietileno.
+                                <i
+                                    >Fibras de celulose, papel absorvente,
+                                    fibras de polipropileno, polímero
+                                    termoplástico, polímero superabsorvente,
+                                    filme de polietileno.</i
+                                >
                             </p>
                             <div class="info">
                                 <p><strong>Tamanhos:</strong></p>
                                 <ul class="productsizes">
-                                    <li><a href="">P</a></li>
-                                    <li><a href="">M</a></li>
-                                    <li><a href="">G</a></li>
-                                    <li><a href="">GG</a></li>
+                                    <li><a class="active" data-dimension="50x16cm">P</a></li>
+                                    <li><a data-dimension="60x16cm">M</a></li>
+                                    <li><a data-dimension="70x16cm">G</a></li>
+                                    <li><a data-dimension="80x16cm">GG</a></li>
                                 </ul>
+                                <strong>Dimensão:</strong>
+                                <p id="dimension"></p>
                             </div>
                         </div>
                     </div>
@@ -162,7 +167,9 @@
                     <div class="col-md-6">
                         <ul class="characteristics">
                             <li><span>1</span>Unisex</li>
-                            <li><span>2</span>Absorvição de 500ml até 1 litro</li>
+                            <li>
+                                <span>2</span>Absorvição de 500ml até 1 litro
+                            </li>
                             <li><span>3</span>Pode acompanhar fraldas</li>
                             <li><span>4</span>Característica 4</li>
                             <li><span>5</span>Característica 5</li>
@@ -170,7 +177,7 @@
                     </div>
                     <div class="col-md-6">
                         <div>
-                            <img src="https://via.placeholder.com/300" alt="" />
+                            <img class="img-fluid" src="https://via.placeholder.com/540x300" alt="" />
                         </div>
                     </div>
                 </div>
@@ -211,7 +218,7 @@
                         </div>
                         <div class="col-md-12 col-lg-4">
                             <h4 class="sctext">Formas de contato:</h4>
-                            <ul class="listcontactforms">
+                            <ul class="listicons">
                                 <li>
                                     <i class="fas fa-phone-alt"></i>(51)
                                     3446-6438
@@ -255,7 +262,7 @@
             </div>
             <div id="sitemap">
                 <ul>
-                    <li><a href="#">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li><a href="#">empresa</a></li>
                     <li><a href="#">produtos</a></li>
                     <li><a href="#">contato</a></li>
@@ -273,7 +280,6 @@
         var buttonToggleNav = document.getElementById("nav-icon");
         buttonToggleNav.addEventListener("click", function(event) {
             event.preventDefault();
-
             var target = buttonToggleNav.getAttribute("data-target");
             target = document.getElementById(target);
             buttonToggleNav.classList.toggle("open");
@@ -291,6 +297,20 @@
         var thumbsImg = document.querySelector(
             ".gallerythumbs .swiper-wrapper"
         );
+        var buttonsSizes = document.querySelectorAll(".productsizes li a");
+        var dimensions = document.getElementById("dimension");
+
+        dimensions.innerHTML = document.querySelector(".productsizes li a.active").getAttribute("data-dimension");
+
+        buttonsSizes.forEach(function(el) {
+            el.addEventListener("click", function(event) {
+                event.preventDefault();
+                var currElAct = document.querySelector(".productsizes li a.active");
+                currElAct.classList.remove("active");
+                event.target.classList.add("active");
+                dimensions.innerHTML = event.target.getAttribute("data-dimension");
+            });
+        });
 
         productPreview.style.backgroundImage =
             thumbsImg.firstElementChild.style.backgroundImage;
